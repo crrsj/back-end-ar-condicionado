@@ -27,7 +27,6 @@ public class ManutencaoDTO{
    private String marca;
    @NotBlank(message = "não pode estar em branco!")
    private String modelo;
-   @NotBlank(message = "não pode estar em branco!")
    private Integer btus;
    @Enumerated(EnumType.STRING)
    private Servicos servicos;

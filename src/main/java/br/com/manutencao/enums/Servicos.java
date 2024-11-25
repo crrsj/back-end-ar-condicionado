@@ -4,5 +4,6 @@ public enum Servicos {
     LIMPEZA,
     CONSERTO,
     MANUTENCAO,
-    CONSULTORIA
+    CONSULTORIA,
+    INSTALACAO;
 }

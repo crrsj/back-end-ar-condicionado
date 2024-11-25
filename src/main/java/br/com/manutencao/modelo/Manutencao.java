@@ -58,7 +58,7 @@ public class Manutencao {
             this.nome = servicosDTO.nome();
         }
         if(servicosDTO.fone() != null){
-            this.servicos = servicosDTO.servicos();
+            this.fone = servicosDTO.fone();
         }
         if (servicosDTO.total() != null){
             this.total = servicosDTO.total();
