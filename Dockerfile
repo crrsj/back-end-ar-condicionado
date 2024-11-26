@@ -1,12 +1,15 @@
-FROM maven:3.8.8-eclipse-temurin-17 AS build
-RUN apt-get update
-RUN apt-get install openjdk-17-jdk -y
-COPY . .
-RUN apt-get install maven -y
+
+# Use uma imagem base com OpenJDK 17
 FROM openjdk:17-jdk-slim
+
+# Define o diretório de trabalho no container
+WORKDIR /app
+
+# Copia o arquivo JAR da aplicação para o diretório de trabalho
+COPY target/Ar-condicionado-1.0.0-SNAPSHOT.jar app.jar
+
+# Exponha a porta usada pela aplicação (opcional, apenas para documentação)
 EXPOSE 8080
-COPY --from=build /target/Ar-condicionado-1.0.0-SNAPSHOT.jar app.jar
-ENTRYPOINT [ "java", "-jar", "app.jar"]
 
-
-
+# Comando para executar o aplicativo
+ENTRYPOINT ["java", "-jar", "app.jar"]
